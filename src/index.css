@@ -1,0 +1,22 @@
+/* For webkit browsers like Chrome, Safari */
+::-webkit-scrollbar {
+  width: 12px; /* Customize the width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Customize the track background colour */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Customize the thumb (the draggable part) colour */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Customize the thumb colour when hovered or clicked */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: none; /* Can be 'auto', 'thin', or 'none' */
+  scrollbar-color: #888 #f1f1f1; /* thumb and track colour */
+}
