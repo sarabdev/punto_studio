@@ -126,7 +126,15 @@ export default function Index() {
                   onChange={toggleColorMode}
                 />
               </MenuItem>
-              <MenuItem>Logout</MenuItem>
+              <MenuItem
+                as={Link}
+                to="/login"
+                onClick={() => {
+                  localStorage.removeItem("token");
+                }}
+              >
+                Logout
+              </MenuItem>
             </MenuList>
           </Menu>
         </Flex>
