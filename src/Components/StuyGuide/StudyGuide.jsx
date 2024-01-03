@@ -59,7 +59,7 @@ export default function StudyGuide() {
     return (
       <Center h="full">
         <Box>
-          <Heading size="lg">Lesson not found</Heading>
+          <Heading size="lg">Lezione non trovata</Heading>
         </Box>
       </Center>
     );

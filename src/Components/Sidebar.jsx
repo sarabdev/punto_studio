@@ -116,10 +116,10 @@ export default function Index() {
               />
             </MenuButton>
             <MenuList fontSize={17} zIndex={5555}>
-              <MenuItem>My profile</MenuItem>
-              <MenuItem>Change password</MenuItem>
+              <MenuItem>Il Mio Profilo</MenuItem>
+              <MenuItem>Cambia Password</MenuItem>
               <MenuItem justifyContent="space-between">
-                Dark Mode
+              Modalità Scura
                 <Switch
                   colorScheme="blue"
                   isChecked={colorMode === "dark"}
@@ -133,7 +133,7 @@ export default function Index() {
                   localStorage.removeItem("token");
                 }}
               >
-                Logout
+                Esci
               </MenuItem>
             </MenuList>
           </Menu>
@@ -192,23 +192,23 @@ const SidebarContent = ({ isOpen, ...props }) => (
               color={useColorModeValue("", "link")}
               py="6"
             >
-              New
+             Nuovo
             </Button>
           </Box>
         </MenuButton>
         <MenuList fontSize={17} zIndex={5555}>
           <MenuItem as={Link} to="/new-guide">
-            <CiFolderOn size={20} style={{ marginRight: "10px" }} /> New Guide
+            <CiFolderOn size={20} style={{ marginRight: "10px" }} /> Nuova Guida
           </MenuItem>
           <MenuItem>
-            <FaPlus size={20} style={{ marginRight: "10px" }} /> New Folder
+            <FaPlus size={20} style={{ marginRight: "10px" }} /> Nuova Cartella
           </MenuItem>
         </MenuList>
       </Menu>
     </Box>
 
     <Box px="6" mb="4" mt="4" color="gray.500">
-      Your Files
+    I Tuoi File
     </Box>
     <Flex
       direction="column"
@@ -218,10 +218,10 @@ const SidebarContent = ({ isOpen, ...props }) => (
       aria-label="Main Navigation"
     >
       <Link to="/">
-        <NavItem icon={LuFiles}>My Guides</NavItem>
+        <NavItem icon={LuFiles}>Mie Guide</NavItem>
       </Link>
-      <NavItem icon={HiOutlineShare}>Shared Files</NavItem>
-      <NavItem icon={WiTime3}>Recent</NavItem>
+      <NavItem icon={HiOutlineShare}>File Condivisi</NavItem>
+      <NavItem icon={WiTime3}>Recenti</NavItem>
     </Flex>
   </Box>
 );

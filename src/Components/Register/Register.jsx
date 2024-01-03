@@ -25,17 +25,17 @@ import { yupResolver } from "@hookform/resolvers/yup";
 const signupSchema = yup.object().shape({
   FullName: yup
     .string()
-    .required("Full name is required")
-    .matches(/^[aA-zZ\s]+$/, "Only alphabets are allowed for full name"),
-  Email: yup.string().email("Email is invalid").required("Email is required"),
+    .required("È richiesto il nome completo.")
+    .matches(/^[aA-zZ\s]+$/, "Solo lettere dell'alfabeto sono consentite per il nome completo."),
+  Email: yup.string().email("L'indirizzo email non è valido.").required("È necessario inserire l'indirizzo email."),
   Password: yup
     .string()
-    .min(6, "Password must be at least 6 characters")
-    .required("Password is required"),
+    .min(6, "La password deve essere lunga almeno 6 caratteri.")
+    .required("È necessaria la password."),
   confirm_password: yup
     .string()
-    .oneOf([yup.ref("Password"), null], "Passwords must match")
-    .required("Password confirmation is required"),
+    .oneOf([yup.ref("Password"), null], "Le password devono corrispondere.")
+    .required("È richiesta la conferma della password."),
 });
 const Register = () => {
   const toast = useToast();
@@ -69,8 +69,8 @@ const Register = () => {
       if (response?.data) {
         toast({
           position: "top-right",
-          title: "Account created.",
-          description: "We have created account for you.",
+          title: "Account creato.",
+          description: "Abbiamo creato un account per te.",
           status: "success",
           duration: 3000,
           isClosable: true,
@@ -80,8 +80,8 @@ const Register = () => {
     } catch (e) {
       toast({
         position: "top-right",
-        title: "Account not created.",
-        description: e?.response?.data?.message || "An error occurred.",
+        title: "Account non creato.",
+        description: e?.response?.data?.message || "Si è verificato un errore.",
         status: "error",
         duration: 3000,
         isClosable: true,
@@ -141,7 +141,7 @@ const Register = () => {
                 }}
               >
                 <IoIosArrowBack size="20px" />
-                <Box>Log in</Box>
+                <Box>Accedi</Box>
               </Box>
             </Link>
             <Stack
@@ -154,10 +154,10 @@ const Register = () => {
                 fontWeight="600"
                 color="white"
               >
-                Create an account
+               Crea un account
               </Heading>
               <Box color="#D2D2D2" fontSize={{ base: "18px", md: "18px" }}>
-                Your details
+              Dettagli personali
               </Box>
             </Stack>
 
@@ -194,7 +194,7 @@ const Register = () => {
                   }}
                   color="white"
                   type="email"
-                  placeholder="Email address"
+                  placeholder="Indirizzo email"
                   autoComplete="email"
                   {...register("Email")}
                   _placeholder={{
@@ -253,7 +253,7 @@ const Register = () => {
                       borderColor: "#616161",
                     }}
                     type={show ? "text" : "password"}
-                    placeholder="Re-type password"
+                    placeholder="Ridigita la password"
                     autoComplete="new-password"
                     {...register("confirm_password")}
                     _placeholder={{
@@ -299,12 +299,12 @@ const Register = () => {
                 type="submit"
                 isLoading={isLoading}
               >
-                Continue
+               Continua
               </Button>
               <Box color="#D2D2D2" fontWeight="400" fontSize="14px">
-                By creating an account, you agree to our
+              Creando un account, accetti i nostri
                 <Link to="/" style={{ marginLeft: "5px" }}>
-                  Privacy Policy
+                Informativa sulla privacy
                 </Link>
               </Box>
             </VStack>

@@ -21,11 +21,11 @@ import axios from "axios";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 const signinSchema = yup.object().shape({
-  Email: yup.string().email("Email is invalid").required("Email is required"),
+  Email: yup.string().email("L'indirizzo email non è valido.").required("È necessario l'indirizzo email."),
   Password: yup
     .string()
-    .min(6, "Password must be at least 6 characters")
-    .required("Password is required"),
+    .min(6, "La password deve essere lunga almeno 6 caratteri.")
+    .required("È necessaria la password."),
 });
 
 const Login = () => {
@@ -62,8 +62,8 @@ const Login = () => {
         navigate("/");
         toast({
           position: "top-right",
-          title: "Login Sunccessfully.",
-          description: `Welcome back  ${data.Email}`,
+          title: "Accesso riuscito con successo.",
+          description: `Benvenuto di nuovo  ${data.Email}`,
           status: "success",
           duration: 3000,
           isClosable: true,
@@ -72,8 +72,8 @@ const Login = () => {
     } catch (e) {
       toast({
         position: "top-right",
-        title: "Login Unsunccessful.",
-        description: e?.response?.data?.message || "An error occurred.",
+        title: "Accesso non riuscito.",
+        description: e?.response?.data?.message || "Si è verificato un errore.",
         status: "error",
         duration: 3000,
         isClosable: true,
@@ -122,7 +122,7 @@ const Login = () => {
                 fontWeight="600"
                 color="white"
               >
-                Log in
+               Accedi
               </Heading>
             </Stack>
 
@@ -137,7 +137,7 @@ const Login = () => {
                   }}
                   color="white"
                   type="email"
-                  placeholder="Email address"
+                  placeholder="Indirizzo email"
                   {...register("Email")}
                   _placeholder={{
                     color: "#D2D2D2",
@@ -202,7 +202,7 @@ const Login = () => {
                 type="submit"
                 isLoading={isLoading}
               >
-                Log in
+                Accedi
               </Button>
               <Link to="/register" style={{ width: "100%" }}>
                 <Button
@@ -219,7 +219,7 @@ const Login = () => {
                   fontSize="14px"
                   fontWeight="600"
                 >
-                  Create an account
+                  Crea un account
                 </Button>
               </Link>
             </VStack>

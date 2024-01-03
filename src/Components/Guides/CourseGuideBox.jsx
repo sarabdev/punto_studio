@@ -45,8 +45,8 @@ export default function CourseGuideBox({ course, fetchCourse }) {
       )
       .then((res) => {
         toast({
-          title: "Course deleted.",
-          description: `The course "${course.name}" has been successfully deleted.`,
+          title: "Corso eliminato.",
+          description: `Il corso "${course.name}" È stato eliminato con successo.`,
           status: "success",
           duration: 3000,
           isClosable: true,
@@ -56,8 +56,8 @@ export default function CourseGuideBox({ course, fetchCourse }) {
       })
       .catch((err) => {
         toast({
-          title: "Error.",
-          description: `The course "${course.name}" could not be deleted. ${err.message}`,
+          title: "Errore.",
+          description: `Il corso "${course.name}" Non è stato possibile eliminare. ${err.message}`,
           status: "error",
           duration: 3000,
           isClosable: true,
@@ -105,9 +105,9 @@ export default function CourseGuideBox({ course, fetchCourse }) {
                 />
               </MenuButton>
               <MenuList>
-                <MenuItem>Rename Guide</MenuItem>
+                <MenuItem>Rinomina Guida</MenuItem>
                 <MenuItem color="red" onClick={onOpen}>
-                  Delete
+                Elimina
                 </MenuItem>
               </MenuList>
             </Menu>
@@ -129,18 +129,17 @@ export default function CourseGuideBox({ course, fetchCourse }) {
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Delete Course</ModalHeader>
+          <ModalHeader>Elimina Corso</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            Are you sure you want to delete the course "{course.name}"? This
-            action cannot be undone.
+          Sei sicuro/a di voler eliminare il corso "{course.name}"? Questa azione non può essere annullata.
           </ModalBody>
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={onClose}>
-              Cancel
+            Annulla
             </Button>
             <Button colorScheme="red" onClick={handleDelete}>
-              Delete
+            Elimina
             </Button>
           </ModalFooter>
         </ModalContent>

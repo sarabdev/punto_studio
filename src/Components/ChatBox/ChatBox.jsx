@@ -32,12 +32,14 @@ function ChatBox({ lessonMarkdown }) {
 
   const initialText = `Whenever you receive a question, you should first refer to the provided markdown text to find the answer. If the answer is contained within the markdown, You will use that information to give a response, possibly improving the phrasing.
    If the markdown does not contain the answer, you will formulate a response independently.But dont add any thing like from this text from this context so the other think you have provided text.
-   The text you will refer to is as follows: ${lessonMarkdown}`;
+   The text you will refer to is as follows also Please check if following content is in Italian then you should reply in italian. if user content is in english you should reply in english. Always remember that!: ${lessonMarkdown}`;
 
   useEffect(() => {
     setMessages([
       { role: "user", content: initialText },
-      { role: "assistant", content: "Hello! How can I assist you today?" },
+      { role: "assistant", content: "Ciao! Come posso assisterti oggi?" },
+      //{ role: "assistant", content: "Hello! How can I assist you today?" },
+
     ]);
   }, []);
   // Ref for the messages container
@@ -143,7 +145,7 @@ function ChatBox({ lessonMarkdown }) {
         {/* Chat Header */}
         <HStack color={licolor} px={4} py={8} borderBottomWidth="1px">
           <IoIosChatboxes size="24px" />
-          <Heading fontSize="24px">Chat with Us</Heading>
+          <Heading fontSize="24px">Chatta con noi</Heading>
         </HStack>
 
         {/* Messages Container */}
@@ -184,7 +186,7 @@ function ChatBox({ lessonMarkdown }) {
             flex={1}
           />
           <Button colorScheme="blue" onClick={sendMessage}>
-            Send
+          Invia
           </Button>
         </HStack>
       </Flex>

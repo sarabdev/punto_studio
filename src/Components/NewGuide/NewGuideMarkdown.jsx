@@ -141,7 +141,7 @@ export default function DisplayLessonMarkdown({ markdown, lesson_name }) {
           <Icon as={SlLike} />
           <Icon as={SlDislike} />
         </Box>
-        <Box>Download</Box>
+        <Box>Scarica</Box>
       </Box>
     </Box>
   );

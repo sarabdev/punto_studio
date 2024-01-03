@@ -140,10 +140,10 @@ function FileDropzone(props) {
         <Box p={2} borderWidth="1px" borderRadius="lg" bg={bgColor}>
           <VStack p={6} spacing={4}>
             <Text fontSize="2xl" fontWeight="bold" textAlign="center">
-              Create a study guide in seconds ⏰
+            Crea una guida di studio in pochi secondi. ⏰
             </Text>
             <Text textAlign="center">
-              Create a study guide by uploading documents and related links.
+            Crea una guida di studio caricando documenti e collegamenti correlati.
             </Text>
 
             <Box
@@ -166,14 +166,14 @@ function FileDropzone(props) {
                 <Icon as={FaCloudUploadAlt} w={10} h={10} />
               </Center>
               <Text textAlign="center" mt={3}>
-                Drag 'n' drop some files here, or click to select files
+              Trascina e rilascia alcuni file qui, o clicca per selezionare i file.
               </Text>
             </Box>
             {files.length > 0 && (
               <>
                 <Box as="aside" w="full">
                   <Text fontWeight="semibold " mb="4">
-                    Files
+                    File
                   </Text>
                   <Flex flexWrap="wrap" gap="2">
                     {fileList}
@@ -187,14 +187,14 @@ function FileDropzone(props) {
                   onClick={onSubmit}
                   isLoading={isLoading}
                 >
-                  Submit
+                  Invia
                 </Button>
               </>
             )}
           </VStack>
           {isLoading && (
             <Box px={8} w="full">
-              <Text mb={4}>Total Operation Progress:</Text>
+              <Text mb={4}>Progresso Totale dell'Operazione:</Text>
               <Progress  value={totalProgress} size="lg" colorScheme="blue" />
             </Box>
           )}

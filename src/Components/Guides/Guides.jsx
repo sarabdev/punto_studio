@@ -66,9 +66,9 @@ export default function Guides() {
   if (!courses?.length) {
     return (
       <Center flexDir="column" minH="100%" gap={2}>
-        <Heading>Guides not found.</Heading>
+        <Heading>Guide non trovate.</Heading>
         <Button as={Link} to="/new-guide">
-          Create Guide
+        Crea Guida
         </Button>
       </Center>
     );
@@ -84,7 +84,7 @@ export default function Guides() {
           <Input
             pr="4.5rem"
             type="text"
-            placeholder="Search Guide"
+            placeholder="Cerca Guida"
             _placeholder={{
               color: "black",
             }}
@@ -94,7 +94,7 @@ export default function Guides() {
       </Box>
       <Box>
         <Heading py={5} size={"md"}>
-          All Guides
+        Tutte le Guide
         </Heading>
         <Flex flexWrap="wrap" w="100%" gap={6}>
           {courses?.map((course) => (

@@ -64,7 +64,7 @@ export default function CourseRoadMap() {
   if (!course) {
     return (
       <Center minH="100%">
-        <Text>Course not found.</Text>
+        <Text>Corso non trovato.</Text>
       </Center>
     );
   }
@@ -77,7 +77,7 @@ export default function CourseRoadMap() {
           <Flex justify="space-between" align="center" mt={4}>
             <Flex align="center">
               <Icon as={GiBookmark} mr={2} />
-              <Text>Lessons</Text>
+              <Text>Lezioni</Text>
             </Flex>
             <Text>{course.lessons?.length || 0}</Text>
           </Flex>
@@ -143,7 +143,7 @@ export default function CourseRoadMap() {
               bgColor: btnBg,
             }}
           >
-            Get Started
+            Inizia
           </Button>
         )}
       </VStack>
