@@ -30,9 +30,8 @@ function ChatBox({ lessonMarkdown }) {
   const licolor = useColorModeValue("black", "white");
   const token = localStorage.getItem("token");
 
-  const initialText = `Whenever you receive a question, you should first refer to the provided markdown text to find the answer. If the answer is contained within the markdown, You will use that information to give a response, possibly improving the phrasing.
-   If the markdown does not contain the answer, you will formulate a response independently.But dont add any thing like from this text from this context so the other think you have provided text.
-   The text you will refer to is as follows also Please check if following content is in Italian then you should reply in italian. if user content is in english you should reply in english. Always remember that!: ${lessonMarkdown}`;
+  const initialText = `Ogni volta che ricevi una domanda, dovresti prima consultare il testo in markdown fornito per trovare la risposta. Se la risposta è contenuta nel markdown, utilizzerai quelle informazioni per dare una risposta, eventualmente migliorando la formulazione. Se il markdown non contiene la risposta, formulerai una risposta in modo indipendente. Ma non aggiungere nulla come 'da questo testo, da questo contesto', così che gli altri pensino che tu abbia fornito il testo.
+  Il testo a cui farai riferimento è il seguente: ${lessonMarkdown}`;
 
   useEffect(() => {
     setMessages([
@@ -175,7 +174,7 @@ function ChatBox({ lessonMarkdown }) {
         {/* Input Container */}
         <HStack px={4} py={2} borderTopWidth="1px" spacing={4}>
           <Input
-            placeholder="Type a message..."
+            placeholder="Inserisci un messaggio..."
             value={draftMessage}
             onKeyDown={(event) => {
               if (event.key === "Enter") {
